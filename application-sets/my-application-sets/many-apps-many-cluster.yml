@@ -14,7 +14,13 @@ spec:
               directories:
                 - path: application-sets/example-apps/
           # cluster generator, 'child' #2
-          - clusters: {}              
+            generators:
+     - list:
+      elements:
+      - cluster: cluster-2
+        url: https://10.5.0.125:6443
+      - cluster: cluster-3
+        url: https://10.5.0.219:6443            
   template:
     metadata:
       name: '{{path.basename}}-{{name}}'
