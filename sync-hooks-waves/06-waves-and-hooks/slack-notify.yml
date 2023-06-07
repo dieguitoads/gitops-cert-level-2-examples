@@ -3,6 +3,10 @@ kind: Job
 metadata:
   namespace: example06
   generateName: slack-notify-
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"
+  annotations:
+    argocd.argoproj.io/hook: Post
   labels:
     codefresh.io/cert: slack-job  
 spec:
